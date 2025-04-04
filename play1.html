@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Naresh | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* === NAVBAR === */
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff;
+      padding: 20px 60px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-left img {
+      height: 55px;
+      width: 55px;
+      border-radius: 50%;
+      border: 2px solid #0077cc;
+    }
+
+    .nav-left h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .nav-links a {
+      font-size: 20px;
+      font-weight: 600;
+      color: #000;
+      text-decoration: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #0077cc;
+      color: white;
+    }
+
+    /* === INTRO === */
+    .intro-section {
+      background-color: #ffe600;
+      text-align: center;
+      padding: 80px 20px 50px;
+    }
+
+    .intro-section h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    .intro-section h4 {
+      font-size: 24px;
+      margin-top: 0;
+      font-weight: 500;
+    }
+
+    /* === SECTION TITLE === */
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-top: 80px;
+      margin-bottom: 40px;
+      text-decoration: underline;
+      color: #0077cc;
+    }
+
+    /* === PROJECTS === */
+    .projects-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .project-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 60px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .project-row:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-row:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .project-image {
+      flex: 0 0 40%;
+      padding: 10px;
+    }
+
+    .project-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .project-info {
+      flex: 0 0 60%;
+      padding: 10px 30px;
+    }
+
+    .project-info h3 a {
+      font-size: 26px;
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .project-info h3 a:hover {
+      text-decoration: underline;
+    }
+
+    .description {
+      margin: 12px 0;
+      font-size: 16px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .tech-tags {
+      margin-top: 12px;
+    }
+
+    .tech-tags span {
+      display: inline-block;
+      background-color: #0077cc;
+      color: #fff;
+      padding: 6px 12px;
+      margin: 5px 6px 0 0;
+      border-radius: 15px;
+      font-size: 14px;
+    }
+
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f2f2f2;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .project-row {
+        flex-direction: column !important;
+      }
+
+      .nav-bar {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .nav-links a {
+        padding: 8px 18px;
+      }
+
+      .intro-section h1 {
+        font-size: 36px;
+      }
+
+      .intro-section h4 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="nav-bar">
+    <div class="nav-left">
+      <img src="images/profile.jpg" alt="Profile Photo" />
+      <h1>Naresh</h1>
+    </div>
+    <div class="nav-links">
+      <a href="https://github.com/naresh-2026" target="_blank">GitHub</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro-section" data-aos="fade-up">
+    <h1>Backend Developer & AI Enthusiast</h1>
+    <h4>Crafting scalable systems and exploring intelligent automation.</h4>
+  </div>
+
+  <!-- Projects Section -->
+  <h2 class="section-title" data-aos="fade-up">GitHub Projects</h2>
+  <div class="projects-container">
+
+    <!-- Project 1 -->
+    <div class="project-row" data-aos="fade-up">
+      <div class="project-image">
+        <img src="images/image1.jpg" alt="Project 1">
+      </div>
+      <div class="project-info">
+        <h3><a href="https://github.com/naresh-2026/edu-bond" target="_blank">EduBond</a></h3>
+        <p class="description">
+          A platform for students to share their knowledge and learn together.  
+          Helps users to interact with people having same interest.
+        </p>
+        <div class="tech-tags">
+          <span>flutter</span>
+          <span>node.js</span>
+          <span>mysql</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-row" data-aos="fade-up">
+      <div class="project-image">
+        <img src="images/image2.png" alt="Project 2">
+      </div>
+      <div class="project-info">
+        <h3><a href="https://github.com/naresh-2026/i-will-tell-what-you-choose" target="_blank">I will tell waht U choose</a></h3>
+        <p class="description">
+          A simple application to show the trick of mathematics.
+          Uses pytests and docker to automate testing and deployment.
+        </p>
+        <div class="tech-tags">
+          <span>python</span>
+          <span>flask</span>
+          <span>HTML</span>
+          <span>docker</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-row" data-aos="fade-up">
+      <div class="project-image">
+        <img src="images/image3.png" alt="Project 3">
+      </div>
+      <div class="project-info">
+        <h3><a href="https://github.com/naresh-2026/handwritten-to-text-converter" target="_blank">Image to text</a></h3>
+        <p class="description">
+          A deep learning model for extracting text from images.  
+          Provides you an overview about the ANNs.
+        </p>
+        <div class="tech-tags">
+          <span>Neural Networks</span>
+          <span>Tensorflow</span>
+          <span>pandas</span>
+          <span>openCV</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-row" data-aos="fade-up">
+      <div class="project-image">
+        <img src="images/image4.png" alt="Project 4">
+      </div>
+      <div class="project-info">
+        <h3><a href="https://github.com/naresh-2026/microservice_application" target="_blank">microservice application</a></h3>
+        <p class="description">
+          An application designed based on microservice architecture for Remainders.  
+          it expalins how to create an image for an application so that it can be run anywhere.
+        </p>
+        <div class="tech-tags">
+          <span>flask</span>
+          <span>node.js</span>
+          <span>docker</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>© 2025 Naresh | Reach me via <a href="mailto:mannamnaresh9@gmail.com">Email</a> or <a href="https://www.linkedin.com/in/mannam-naresh-4a94b5320/">LinkedIn</a></p>
+  </footer>
+
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
